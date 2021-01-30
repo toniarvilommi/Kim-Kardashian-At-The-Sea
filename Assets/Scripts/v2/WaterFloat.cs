@@ -56,7 +56,7 @@ public class WaterFloat : MonoBehaviour
             WaterLinePoints[i].y = Waves.GetHeight(FloatPoints[i].position);
             newWaterLine += WaterLinePoints[i].y / FloatPoints.Length;
             if (WaterLinePoints[i].y > FloatPoints[i].position.y){
-                float GravLess =  FloatPoints[i].position.y- WaterLinePoints[i].y;
+                float GravLess = WaterLinePoints[i].y - FloatPoints[i].position.y;
                 Rigidbody.AddForceAtPosition(Vector3.up*(Mathf.Abs(Physics.gravity.y)*FloatPower*Rigidbody.mass+GravLess), FloatPoints[i].position);
             }
         }

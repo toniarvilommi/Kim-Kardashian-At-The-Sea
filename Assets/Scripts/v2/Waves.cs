@@ -14,6 +14,8 @@ public class Waves : MonoBehaviour
     protected MeshFilter MeshFilter;
     protected Mesh Mesh;
 
+    public GameObject ship;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -133,6 +135,7 @@ public class Waves : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.position = new Vector3(ship.transform.position.x-Dimension/2, 0, ship.transform.position.z-Dimension/2);
         var verts = Mesh.vertices;
         for (int x = 0; x <= Dimension; x++)
         {
@@ -143,12 +146,12 @@ public class Waves : MonoBehaviour
                 {
                     if (Octaves[o].alternate)
                     {
-                        var perl = Mathf.PerlinNoise((x * Octaves[o].scale.x) / Dimension, (z * Octaves[o].scale.y) / Dimension) * Mathf.PI * 2f;
+                        var perl = Mathf.PerlinNoise(((x+transform.position.x) * Octaves[o].scale.x) / Dimension, ((z+transform.position.z) * Octaves[o].scale.y) / Dimension) * Mathf.PI * 2f;
                         y += Mathf.Cos(perl + Octaves[o].speed.magnitude * Time.time) * Octaves[o].height;
                     }
                     else
                     {
-                        var perl = Mathf.PerlinNoise((x * Octaves[o].scale.x + Time.time * Octaves[o].speed.x) / Dimension, (z * Octaves[o].scale.y + Time.time * Octaves[o].speed.y) / Dimension) - 0.5f;
+                        var perl = Mathf.PerlinNoise(((x+transform.position.x) * Octaves[o].scale.x + Time.time * Octaves[o].speed.x) / Dimension, ((z+transform.position.z) * Octaves[o].scale.y + Time.time * Octaves[o].speed.y) / Dimension) - 0.5f;
                         y += perl * Octaves[o].height;
                     }
                 }

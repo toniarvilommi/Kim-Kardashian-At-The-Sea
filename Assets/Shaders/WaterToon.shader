@@ -41,8 +41,8 @@
                 float2 uv : TEXCOORD0;
                 UNITY_FOG_COORDS(1)
                 float4 vertex : SV_POSITION;
-                float4 noiseUV : TEXCOORD1;
-                float4 screenPosition : TEXCOORD2;
+                float4 noiseUV : TEXCOORD2;
+                float4 screenPosition : TEXCOORD3;
             };
 
             sampler2D _MainTex;
@@ -120,9 +120,10 @@
                 float waterDepthDifference01 = saturate(depthDifference / _DepthMaxDistance);
                 float4 waterColor = lerp(_DepthGradientShallow, lerp(_DepthGradientDeep, _WaveHighColor, i.noiseUV.y/_WaveHighFloat), waterDepthDifference01);
 
-                float2 pos = i.noiseUV.xz*4;
-                pos.x = pos.x+ _Time.y;
-                pos.y = pos.y+ _Time.y*4;
+                float2 pos = i.noiseUV.xz;
+                pos.x = pos.x;
+                pos.y = pos.y;
+                
                 float noise2 = noise(pos);
 
                 float foamDepthDifference01 = saturate(depthDifference / _FoamDistance);
