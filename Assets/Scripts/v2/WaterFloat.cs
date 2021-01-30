@@ -42,7 +42,7 @@ public class WaterFloat : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         //default water surface
         var newWaterLine = 0f;
@@ -55,8 +55,10 @@ public class WaterFloat : MonoBehaviour
             WaterLinePoints[i] = FloatPoints[i].position;
             WaterLinePoints[i].y = Waves.GetHeight(FloatPoints[i].position);
             newWaterLine += WaterLinePoints[i].y / FloatPoints.Length;
-            if (WaterLinePoints[i].y > FloatPoints[i].position.y)
-                Rigidbody.AddForceAtPosition(Vector3.up*Mathf.Abs(Physics.gravity.y)*FloatPower*Rigidbody.mass, FloatPoints[i].position);
+            if (WaterLinePoints[i].y > FloatPoints[i].position.y){
+                float GravLess = WaterLinePoints[i].y - FloatPoints[i].position.y;
+                Rigidbody.AddForceAtPosition(Vector3.up*(Mathf.Abs(Physics.gravity.y)*FloatPower*Rigidbody.mass+GravLess), FloatPoints[i].position);
+            }
         }
         WaterLine = newWaterLine;
 
