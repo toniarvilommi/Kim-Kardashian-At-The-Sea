@@ -681,7 +681,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f4a253d81cb2cc34e918d4efac5eb28a, type: 2}
+  - {fileID: 2100000, guid: 6a05f6de493e7514b946e3d43185fdef, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1257,7 +1257,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2052783938}
-  m_LocalRotation: {x: 0.3004844, y: 0.000000016411217, z: -0.0000000051702482, w: 0.95378673}
+  m_LocalRotation: {x: 0.30048442, y: -0.000000016411217, z: 0.0000000051702487, w: 0.95378673}
   m_LocalPosition: {x: 25.14, y: 2.9700017, z: -0.47999763}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1448,7 +1448,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.3333334, y: 1}
+    m_SensorSize: {x: 1.7780374, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1464,7 +1464,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2094953288}
-  m_LocalRotation: {x: 0.3004844, y: 0.000000016411217, z: -0.0000000051702482, w: 0.95378673}
+  m_LocalRotation: {x: 0.30048442, y: -0.000000016411217, z: 0.0000000051702487, w: 0.95378673}
   m_LocalPosition: {x: 25.14, y: 2.9700017, z: -0.47999763}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

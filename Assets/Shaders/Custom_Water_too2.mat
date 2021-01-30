@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Skybox_Skybox gradient
-  m_Shader: {fileID: 4800000, guid: e3660f641c64c8147bf68d42bf0da572, type: 3}
+  m_Name: Custom_Water_too2
+  m_Shader: {fileID: 4800000, guid: 818104a20d3fad44dabddf8ed1981b58, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -18,8 +18,14 @@ Material:
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
-    m_Floats: []
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Glossiness: 0
+    - _Metallic: 0
     m_Colors:
-    - _BotCol: {r: 0.4719206, g: 0.83457375, b: 0.9528302, a: 1}
-    - _TopCol: {r: 0, g: 0.77372265, b: 1, a: 1}
+    - _Ambient: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
