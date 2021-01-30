@@ -30,9 +30,10 @@ Material:
     m_Floats:
     - _DepthMaxDistance: 5
     - _FoamDistance: 4000
-    - _SurfaceNoiseCutoff: 0.932
+    - _SurfaceNoiseCutoff: 0.841
     - _WaveHighFloat: 2.92
     m_Colors:
     - _DepthGradientDeep: {r: 0.15966538, g: 0.68499666, b: 0.8679245, a: 0.749}
     - _DepthGradientShallow: {r: 0.098923095, g: 0.2981834, b: 0.3679245, a: 0.725}
+    - _Position: {r: 0, g: 0, b: 0, a: 1}
     - _WaveHighColor: {r: 0.45256317, g: 0.7494104, b: 0.8490566, a: 1}
