@@ -132,9 +132,29 @@ public class Waves : MonoBehaviour
         return index((int)x, (int)z);
     }
 
+
+    //Adds stuff over time to the sea
+    [Header("Change waves by time")]
+    public float changePerSecond = 0.1f;
+    public int divideSeconds = 20;
+    public int maxHeight = 7;
+    
+
+    private void FixedUpdate()
+    {
+        //Change height of the sea per second
+        Octaves[0].height += changePerSecond * Time.deltaTime / divideSeconds;
+        if (Octaves[0].height >= maxHeight)
+        {
+            Octaves[0].height = maxHeight;
+        }
+    }
     // Update is called once per frame
     void Update()
     {
+        
+
+        //-->
         transform.position = new Vector3(ship.transform.position.x-Dimension/2, 0, ship.transform.position.z-Dimension/2);
         var verts = Mesh.vertices;
         for (int x = 0; x <= Dimension; x++)
