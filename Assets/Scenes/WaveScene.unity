@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: bbcbf4f9e43d0c94c99079a148121075, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 97ff6830481a39a438091df121bfbc83, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -241,12 +241,12 @@ PrefabInstance:
     - target: {fileID: 4443651929943278891, guid: d5555c30e9e9813488c9a3a0975018b9,
         type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 0.003941613
+      value: 0.0039416202
       objectReference: {fileID: 0}
     - target: {fileID: 4443651929943278891, guid: d5555c30e9e9813488c9a3a0975018b9,
         type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: 0.00045005372
+      value: 0.0004500528
       objectReference: {fileID: 0}
     - target: {fileID: 4443651930186358274, guid: d5555c30e9e9813488c9a3a0975018b9,
         type: 3}
@@ -261,12 +261,12 @@ PrefabInstance:
     - target: {fileID: 4443651930186358275, guid: d5555c30e9e9813488c9a3a0975018b9,
         type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 0.0040259687
+      value: 0.0040259724
       objectReference: {fileID: 0}
     - target: {fileID: 4443651930186358275, guid: d5555c30e9e9813488c9a3a0975018b9,
         type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: 0.00093303394
+      value: 0.0009330335
       objectReference: {fileID: 0}
     - target: {fileID: 4443651930187693136, guid: d5555c30e9e9813488c9a3a0975018b9,
         type: 3}
@@ -346,17 +346,17 @@ PrefabInstance:
     - target: {fileID: 4443651930585288799, guid: d5555c30e9e9813488c9a3a0975018b9,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: 0.0000000046566133
+      value: 9.313227e-10
       objectReference: {fileID: 0}
     - target: {fileID: 4443651930585288799, guid: d5555c30e9e9813488c9a3a0975018b9,
         type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 0.03054781
+      value: 0.030547813
       objectReference: {fileID: 0}
     - target: {fileID: 4443651930585288799, guid: d5555c30e9e9813488c9a3a0975018b9,
         type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: -0.0000000039581214
+      value: -0.0000000027939682
       objectReference: {fileID: 0}
     - target: {fileID: 4443651930716110110, guid: d5555c30e9e9813488c9a3a0975018b9,
         type: 3}
@@ -681,7 +681,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f4a253d81cb2cc34e918d4efac5eb28a, type: 2}
+  - {fileID: 2100000, guid: 6a05f6de493e7514b946e3d43185fdef, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
