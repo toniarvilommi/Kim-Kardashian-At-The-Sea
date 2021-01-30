@@ -13,6 +13,7 @@
         _WaveHighFloat("WaveHighFloat", float) = 1
 
         _FoamDistance("Foam Distance", Float) = 0.4
+        _Position("Position", Vector) = (0,0,0)
         
     }
     SubShader
@@ -64,6 +65,8 @@
             float _WaveHighFloat;
 
             float _FoamDistance;
+
+            float4 _Position;
 
             v2f vert (appdata v)
             {
@@ -120,7 +123,7 @@
                 float waterDepthDifference01 = saturate(depthDifference / _DepthMaxDistance);
                 float4 waterColor = lerp(_DepthGradientShallow, lerp(_DepthGradientDeep, _WaveHighColor, i.noiseUV.y/_WaveHighFloat), waterDepthDifference01);
 
-                float2 pos = i.noiseUV.xz;
+                float2 pos = i.noiseUV.xz+_Position.xz;
                 pos.x = pos.x;
                 pos.y = pos.y;
                 
