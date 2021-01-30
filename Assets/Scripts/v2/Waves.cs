@@ -16,6 +16,8 @@ public class Waves : MonoBehaviour
 
     public GameObject ship;
 
+    Renderer rend;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,8 @@ public class Waves : MonoBehaviour
 
         MeshFilter = gameObject.AddComponent<MeshFilter>();
         MeshFilter.mesh = Mesh;
+
+        rend = GetComponent<Renderer>();
     }
 
     public float GetHeight(Vector3 position)
@@ -153,8 +157,8 @@ public class Waves : MonoBehaviour
     void Update()
     {
         
-
-        //-->
+        rend.material.SetVector("_Position", transform.position);
+        
         transform.position = new Vector3(ship.transform.position.x-Dimension/2, 0, ship.transform.position.z-Dimension/2);
         var verts = Mesh.vertices;
         for (int x = 0; x <= Dimension; x++)

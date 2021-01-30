@@ -18,7 +18,6 @@ public class CheckUpsidedown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Vector3.Dot(transform.up, Vector3.down));
         if (Vector3.Dot(transform.up, Vector3.down) > -0.3f)
         {
             Debug.Log("Destroy joint");
