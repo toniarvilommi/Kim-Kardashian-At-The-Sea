@@ -5,7 +5,9 @@ using UnityEngine;
 public class CheckUpsidedown : MonoBehaviour
 {
     [SerializeField]
-    public GameObject _kim;
+    GameObject _kim;
+    [SerializeField]
+    GameObject boat;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +18,8 @@ public class CheckUpsidedown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Dot(transform.up, Vector3.down) > 0)
+        Debug.Log(Vector3.Dot(transform.up, Vector3.down));
+        if (Vector3.Dot(transform.up, Vector3.down) > -0.3f)
         {
             Debug.Log("Destroy joint");
             Destroy(_kim.GetComponentInChildren<FixedJoint>());
