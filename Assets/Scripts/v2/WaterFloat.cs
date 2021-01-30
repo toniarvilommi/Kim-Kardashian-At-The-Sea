@@ -8,11 +8,8 @@ using UnityEngine;
 public class WaterFloat : MonoBehaviour
 {
     //public properties
-    public float AirDrag = 1;
-    public float WaterDrag = 10;
-    public bool AffectDirection = true;
-    public bool AttachToSurface = false;
     public Transform[] FloatPoints;
+    public float FloatPower;
 
     //used components
     protected Rigidbody Rigidbody;
@@ -35,7 +32,6 @@ public class WaterFloat : MonoBehaviour
         //get components
         Waves = FindObjectOfType<Waves>();
         Rigidbody = GetComponent<Rigidbody>();
-        Rigidbody.useGravity = false;
 
         //compute center
         WaterLinePoints = new Vector3[FloatPoints.Length];
@@ -60,43 +56,12 @@ public class WaterFloat : MonoBehaviour
             WaterLinePoints[i].y = Waves.GetHeight(FloatPoints[i].position);
             newWaterLine += WaterLinePoints[i].y / FloatPoints.Length;
             if (WaterLinePoints[i].y > FloatPoints[i].position.y)
-                pointUnderWater = true;
+                Rigidbody.AddForceAtPosition(Vector3.up*Mathf.Abs(Physics.gravity.y)*FloatPower*Rigidbody.mass, FloatPoints[i].position);
         }
-
-        var waterLineDelta = newWaterLine - WaterLine;
         WaterLine = newWaterLine;
 
         //compute up vector
         TargetUp = PhysicsHelper.GetNormal(WaterLinePoints);
-
-        //gravity
-        var gravity = Physics.gravity;
-        Rigidbody.drag = AirDrag;
-        if (WaterLine > Center.y)
-        {
-            Rigidbody.drag = WaterDrag;
-            //under water
-            if (AttachToSurface)
-            {
-                //attach to water surface
-                Rigidbody.position = new Vector3(Rigidbody.position.x, WaterLine - centerOffset.y, Rigidbody.position.z);
-            }
-            else
-            {
-                //go up
-                gravity = AffectDirection ? TargetUp * -Physics.gravity.y : -Physics.gravity;
-                transform.Translate(Vector3.up * waterLineDelta * 0.9f);
-            }
-        }
-        Rigidbody.AddForce(gravity * Mathf.Clamp(Mathf.Abs(WaterLine - Center.y), 0, 1));
-
-        //rotation
-        if (pointUnderWater)
-        {
-            //attach to water surface
-            TargetUp = Vector3.SmoothDamp(transform.up, TargetUp, ref smoothVectorRotation, 0.2f);
-            Rigidbody.rotation = Quaternion.FromToRotation(transform.up, TargetUp) * Rigidbody.rotation;
-        }
 
     }
 
