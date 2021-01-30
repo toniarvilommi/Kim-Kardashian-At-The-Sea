@@ -86,7 +86,7 @@ public class Waves : MonoBehaviour
                         //Perlin noise for dimension
                         var perl = Mathf.PerlinNoise((x * Octaves[o].scale.x + Time.time * Octaves[o].speed.x) / Dimension, (z * Octaves[o].scale.y + Time.time * Octaves[o].speed.y) / Dimension) - 0.5f;
                         //Cos for y
-                        y += Mathf.Cos(Octaves[o].speed.magnitude * Time.time) * Octaves[o].height;
+                        y += Mathf.Cos(perl + Octaves[o].speed.magnitude * Time.time) * Octaves[o].height;
                     }
                 }
 
