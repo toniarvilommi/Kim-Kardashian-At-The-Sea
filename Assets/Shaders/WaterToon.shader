@@ -14,6 +14,7 @@
 
         _FoamDistance("Foam Distance", Float) = 0.4
         _Position("Position", Vector) = (0,0,0)
+        _TimeMulti("_TimeMulti", Float) = 0.4
         
     }
     SubShader
@@ -67,6 +68,7 @@
             float _FoamDistance;
 
             float4 _Position;
+            float _TimeMulti;
 
             v2f vert (appdata v)
             {
@@ -123,7 +125,7 @@
 
                 float2 pos = i.noiseUV.xz+_Position.xz;
                 pos.x = pos.x;
-                pos.y = pos.y;
+                pos.y = pos.y+_Time*_TimeMulti;
                 
                 float noise2 = noise(pos);
 
