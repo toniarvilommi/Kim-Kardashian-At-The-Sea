@@ -10,6 +10,9 @@ public class Waves : MonoBehaviour
     public float UVScale = 2f;
     public Octave[] Octaves;
 
+    
+    public bool updateWaves = true;
+
     //Mesh
     protected MeshFilter MeshFilter;
     protected Mesh Mesh;
@@ -146,11 +149,13 @@ public class Waves : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //Change height of the sea per second
-        Octaves[0].height += changePerSecond * Time.deltaTime / divideSeconds;
-        if (Octaves[0].height >= maxHeight)
-        {
-            Octaves[0].height = maxHeight;
+        if(updateWaves){
+            //Change height of the sea per second
+            Octaves[0].height += changePerSecond * Time.deltaTime / divideSeconds;
+            if (Octaves[0].height >= maxHeight)
+            {
+                Octaves[0].height = maxHeight;
+            }
         }
     }
     // Update is called once per frame

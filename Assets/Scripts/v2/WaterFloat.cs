@@ -9,7 +9,7 @@ public class WaterFloat : MonoBehaviour
 {
     //public properties
     public Transform[] FloatPoints;
-    public float FloatPower;
+    public float FloatPower = 30;
 
     //used components
     protected Rigidbody Rigidbody;
@@ -57,7 +57,7 @@ public class WaterFloat : MonoBehaviour
             newWaterLine += WaterLinePoints[i].y / FloatPoints.Length;
             if (WaterLinePoints[i].y > FloatPoints[i].position.y){
                 float GravLess = WaterLinePoints[i].y - FloatPoints[i].position.y;
-                Rigidbody.AddForceAtPosition(Vector3.up*(Mathf.Abs(Physics.gravity.y)*FloatPower*Rigidbody.mass+GravLess), FloatPoints[i].position);
+                Rigidbody.AddForceAtPosition(Vector3.up*((Mathf.Abs(Physics.gravity.y)*FloatPower*Rigidbody.mass+GravLess)*Time.deltaTime), FloatPoints[i].position);
             }
         }
         WaterLine = newWaterLine;

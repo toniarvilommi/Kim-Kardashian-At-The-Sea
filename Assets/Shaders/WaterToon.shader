@@ -117,9 +117,7 @@
                 fixed4 col = tex2D(_MainTex, i.uv);
 
                 float depthDifference = existingDepthLinear - i.screenPosition.w;
-                // apply fog
-                UNITY_APPLY_FOG(i.fogCoord, col);
-
+                
                 float waterDepthDifference01 = saturate(depthDifference / _DepthMaxDistance);
                 float4 waterColor = lerp(_DepthGradientShallow, lerp(_DepthGradientDeep, _WaveHighColor, i.noiseUV.y/_WaveHighFloat), waterDepthDifference01);
 
@@ -135,7 +133,12 @@
                 float surfaceNoise = noise(pos) > _SurfaceNoiseCutoff ? 0.1 : 0;
 
                 //return float4(noise2, noise2, noise2, 1.0);
-                return waterColor + surfaceNoise;
+                // apply fog
+
+                waterColor = waterColor + surfaceNoise;
+                UNITY_APPLY_FOG(i.fogCoord, waterColor);
+
+                return waterColor;
             }
             ENDCG
         }
