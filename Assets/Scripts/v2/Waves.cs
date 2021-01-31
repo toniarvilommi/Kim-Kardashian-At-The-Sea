@@ -158,7 +158,7 @@ public class Waves : MonoBehaviour
                 Octaves[0].height = maxHeight;
             }
 
-            Octaves[1].height += changePerSecond * Time.deltaTime / 40;
+            Octaves[1].height += changePerSecond * Time.deltaTime / 23;
 
             if (Octaves[1].height >= maxHeight)
             {
