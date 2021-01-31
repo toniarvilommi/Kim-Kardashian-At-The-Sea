@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0770381f47bf87c449e30e08cc39020e
+guid: 0c193e9a8d27aba4bba44c8c8384dea8
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Copperplate Gothic Bold
+  fontName: Copperplate Gothic Light
   fontNames:
-  - Copperplate Gothic Bold
+  - Copperplate Gothic Light
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
