@@ -38,12 +38,10 @@ public class CheckUpsidedown : MonoBehaviour
 
             FindObjectOfType<AudioManager>().Play("Scream");
 
-            if (Input.GetKeyDown("space"))
-            {
-                SceneManager.LoadScene("Menu", LoadSceneMode.Single);
-            }
-
-
+        }
+        if (Input.GetKeyDown("space") && dead)
+        {
+            SceneManager.LoadScene("Menu", LoadSceneMode.Single);
         }
 
     }
