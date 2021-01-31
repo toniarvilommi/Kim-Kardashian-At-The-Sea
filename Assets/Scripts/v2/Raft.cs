@@ -20,6 +20,9 @@ public class Raft : MonoBehaviour
         zPos = Random.Range(-respawnRange, respawnRange);
 
         Debug.Log("Random range is:" + xPos + " " + zPos);
+
+        //Play sound
+        FindObjectOfType<AudioManager>().Play("PickUp");
     }
 
 

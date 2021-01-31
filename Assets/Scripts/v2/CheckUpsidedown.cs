@@ -17,6 +17,8 @@ public class CheckUpsidedown : MonoBehaviour
         Canvas.SetActive(false);
     }
 
+    public bool dead;
+
     // Update is called once per frame
     void Update()
     {
@@ -24,13 +26,17 @@ public class CheckUpsidedown : MonoBehaviour
         {
             Debug.Log("Destroy joint");
             Destroy(_kim.GetComponentInChildren<FixedJoint>());
+            
             Canvas.SetActive(true);
 
         }
         var checkJoint = _kim.GetComponentInChildren<FixedJoint>();
-        if (!checkJoint)
+        if (!checkJoint && !dead)
         {
             Canvas.SetActive(true);
+            dead = true;
+
+            FindObjectOfType<AudioManager>().Play("Scream");
 
             if (Input.GetKeyDown("space"))
             {
