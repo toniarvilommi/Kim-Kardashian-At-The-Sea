@@ -1118,6 +1118,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _kim: {fileID: 489209225}
   boat: {fileID: 1077644946}
+--- !u!114 &1077644954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077644946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aaeccc007088b349930d810e906dc72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changePerSecond: 1
 --- !u!1001 &1087824297
 PrefabInstance:
   m_ObjectHideFlags: 0
