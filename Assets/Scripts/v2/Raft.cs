@@ -9,6 +9,8 @@ public class Raft : MonoBehaviour
     GameObject Poiju;
     bool enterArea = false;
 
+    public GameObject arrow;
+
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Saakeli"); 
@@ -40,7 +42,7 @@ public class Raft : MonoBehaviour
 
     private void Update()
     {
-        
+        arrow.transform.LookAt(Poiju.transform);
 
 
         //Jos menee arealle niin meri rauhottuu graduaalisesti
