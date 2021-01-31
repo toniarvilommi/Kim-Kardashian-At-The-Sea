@@ -49,6 +49,9 @@ public class TheWind : MonoBehaviour
         if(Input.GetKey(KeyCode.A)){
             rb.AddTorque(-transform.up * clickForce*2);
         }
+        if (Input.GetKeyDown(KeyCode.Escape)){
+            Application.Quit();
+        }
       }
 
 
