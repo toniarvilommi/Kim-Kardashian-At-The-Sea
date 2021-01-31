@@ -9,6 +9,8 @@ public class Raft : MonoBehaviour
     GameObject Poiju;
     bool enterArea = false;
 
+
+    public int Score = 0;
     public GameObject arrow;
 
     private void OnTriggerEnter(Collider other)
@@ -23,6 +25,8 @@ public class Raft : MonoBehaviour
 
         //Play sound
         FindObjectOfType<AudioManager>().Play("PickUp");
+
+        Score += 1;
     }
 
 

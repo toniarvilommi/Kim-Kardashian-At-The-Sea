@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class CheckUpsidedown : MonoBehaviour
@@ -11,6 +12,9 @@ public class CheckUpsidedown : MonoBehaviour
     GameObject boat;
     [SerializeField]
     GameObject Canvas;
+
+
+    public GameObject scoreText;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +41,7 @@ public class CheckUpsidedown : MonoBehaviour
             dead = true;
 
             FindObjectOfType<AudioManager>().Play("Scream");
+            scoreText.GetComponent<Text>().text = "SCORE: "+gameObject.GetComponent<Raft>().Score;
 
         }
         if (Input.GetKeyDown("space") && dead)
