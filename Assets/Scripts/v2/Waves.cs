@@ -152,9 +152,17 @@ public class Waves : MonoBehaviour
         if(updateWaves){
             //Change height of the sea per second
             Octaves[0].height += changePerSecond * Time.deltaTime / divideSeconds;
+            
             if (Octaves[0].height >= maxHeight)
             {
                 Octaves[0].height = maxHeight;
+            }
+
+            Octaves[1].height += changePerSecond * Time.deltaTime / 40;
+
+            if (Octaves[1].height >= maxHeight)
+            {
+                Octaves[1].height = maxHeight;
             }
         }
     }
